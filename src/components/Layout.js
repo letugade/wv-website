@@ -8,10 +8,14 @@ const Layout =({children}) =>{
             <div style={{width: "20vw"}}>
                 <Navbar />
             </div>
-            <div style={{marginLeft: "25vw", width: "55vw", height: "100vh", textAlign: "left", position: "absolute"}}>{children}</div>
-            <footer style={{marginLeft: "20vw", width: "80vw", position: "absolute", bottom: '15px', textAlign: "center"}}>
-                © 2021 UTM White Van. All Rights Reserved.
-            </footer>
+            <div style={{marginLeft: "1vw", width: "79vw", height: "100vh", textAlign: "left", position: "relative", paddingBottom: "2.5rem", marginTop: "0px"}}>
+                <div style={{minHeight: "90vh"}}>
+                    {children}
+                </div>
+                <footer style={{width: "80vw", height: "2.5rem", textAlign: "center", position: "relative"}}>
+                    © 2021 UTM White Van. All Rights Reserved.
+                </footer>
+            </div>
         </div>
     )
 }

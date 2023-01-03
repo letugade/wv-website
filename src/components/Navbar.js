@@ -2,14 +2,14 @@ import {Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sideba
 import { Link } from 'react-router-dom';
 import React, { useLayoutEffect } from "react";
 
-import logo from "../assets/logo.svg"
+import logo from "../assets/logo.png"
 
 function Navbar() {
     let { collapseSidebar } = useProSidebar();
   return (
-    <Sidebar defaultCollapsed="true" style={{ width: "20vw"}}>
+    <Sidebar defaultCollapsed="true" style={{ width: "20vw", height: "100vh", backgroundColor: "#ffffff"}}>
         <div>
-            <img src={logo} />
+            <img src={logo} style={{ width: "100px", height: "100px"}}/>
         </div>
         <Menu>
         <MenuItem routerLink={<Link to="/home"/>}> Home</MenuItem>

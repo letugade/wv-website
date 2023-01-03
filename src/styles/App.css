@@ -1,6 +1,13 @@
 .App {
   text-align: center;
   display: flex;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
