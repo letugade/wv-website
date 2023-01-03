@@ -1,17 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './styles/index.css';
+
+import Navbar from './components/Navbar.js';
+
+import Home from './screens/Home';
+import About from './screens/About';
+import Projects from './screens/Projects';
+import Repo from './screens/Projects/Repo';
+import UTMC from './screens/Projects/UTMC';
+import Podcast from './screens/Projects/Podcast';
+import Wakeup from './screens/Projects/Wakeup';
+
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import {ProSidebarProvider} from "react-pro-sidebar";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+      <Route>
+      <Route path="/" element={<Home />} />
+      <Route path="home" element={<Home />} />
+      <Route path="about-us" element={<About />} />
+      <Route path="projects" element={<Projects />} />
+      <Route path="projects/repo" element={<Repo />} />
+      <Route path="projects/utmc" element={<UTMC />} />
+      <Route path="projects/podcast" element={<Podcast />} />
+      <Route path="projects/wakeup-club" element={<Wakeup />} />
+      </Route>
+  )
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <ProSidebarProvider>
+          <RouterProvider router={router} />
+      </ProSidebarProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
